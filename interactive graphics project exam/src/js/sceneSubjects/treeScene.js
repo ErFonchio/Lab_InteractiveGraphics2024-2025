@@ -376,6 +376,7 @@ export class TreeScene {
 
 
         this.updateScheletonPosition = (time) => {
+            //BFS queue
             let queue = [{
                 segment: this.scheletonmap.get(this.first_line),
                 currentStart: this.scheletonmap.get(this.first_line).original_starting_position.clone(),
@@ -385,10 +386,10 @@ export class TreeScene {
             while (queue.length > 0) {
                 const { segment, currentStart, currentEnd } = queue.shift();
 
-                // Lunghezza originale
+                // Taking the original length of the segment
                 const originalVector = segment.original_ending_position.clone().sub(segment.original_starting_position);
 
-                // Posizione attuale
+                // What is the current position of the segment?
                 const positions = segment.mesh.geometry.attributes.position.array;
 
                 // Aggiorna posizione iniziale solamente se non sto modificando il tronco
@@ -397,6 +398,9 @@ export class TreeScene {
                     positions[0] = currentStart.x;
                     positions[1] = currentStart.y;
                     positions[2] = currentStart.z;
+                    positions[3] = currentEnd.x;
+                    positions[4] = currentEnd.y;
+                    positions[5] = currentEnd.z;
                 }
 
                 // Aggiorna posizione finale (inizialmente fissa per ora)
@@ -463,6 +467,7 @@ export class TreeScene {
                 for (let child of segment.child_lines) {
                     queue.push({
                         segment: child,
+                        //Updated children position
                         currentStart: updatedEnd.clone(),
                         currentEnd: updatedEnd.clone()
                                                 .sub(start_vector) 

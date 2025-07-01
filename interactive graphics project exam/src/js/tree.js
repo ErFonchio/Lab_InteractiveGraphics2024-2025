@@ -161,7 +161,7 @@ export function growTree(trunk_points, remaining_attraction_points, node_distanc
     const { minimum_distance_dictionary, ret, points_to_remove } = computeMinimumDistance(trunk_points, remaining_attraction_points);
     let trunk_to_points = minimum_distance_dictionary;
     let remaining_attraction_points_ret = ret;
-    //console.log("Trunk involved: ",trunk_to_points);
+
     //Then i compute the average distance between the trunk points and the random points
     let cubeMeshesToAdd = [];
     let trunk_points_ = [...trunk_points];

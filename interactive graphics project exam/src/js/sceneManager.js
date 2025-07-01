@@ -32,7 +32,7 @@ export function SceneManager(canvas) {
         const scene = new THREE.Scene();
         //Creating axis helper to orient through dimensions
         const axesHelper = new THREE.AxesHelper(2);
-        scene.add(axesHelper);
+        //scene.add(axesHelper);
         scene.background = new THREE.Color("#000");
 
         return scene;

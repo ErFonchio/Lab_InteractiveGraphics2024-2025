@@ -18,8 +18,8 @@ export class skyScene {
         
         this.directionalLight = new THREE.DirectionalLight(0xffffff, 3);
         this.directionalLight.castShadow = true;
-        this.directionalLight.shadow.camera.left = -30;
-        this.directionalLight.shadow.camera.right = 30;
+        this.directionalLight.shadow.camera.left = -50;
+        this.directionalLight.shadow.camera.right = 50;
         this.directionalLight.shadow.camera.top = 50;
         this.directionalLight.shadow.camera.bottom = -30;
         this.directionalLight.shadow.camera.near = 0.5;

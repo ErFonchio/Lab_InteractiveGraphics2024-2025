@@ -14,9 +14,10 @@ export class wind{
         audioLoader.load('wind.mp3', function(buffer) {
             windSound.setBuffer(buffer);
             windSound.setLoop(true);
-            windSound.setVolume(0.5); // Volume iniziale
+            windSound.setVolume(0.5);
             windSound.play();
         });
+
 
         this.toggle_wind = function() {
             this.isMuted = 1-this.isMuted;

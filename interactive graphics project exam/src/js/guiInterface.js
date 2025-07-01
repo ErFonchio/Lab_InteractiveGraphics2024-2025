@@ -25,7 +25,7 @@ export class guiInterface{
         this.gui.add(this.parameters, 'trunk').name("Show trunk").onChange((value) => {this.tree_instance.toggle_trunk(value)});
         this.gui.add(this.parameters, 'sky').name("Show sky").onChange((value) => {this.sky_instance.toggle_sky(value)});
         this.gui.add(this.parameters, 'scheleton').name("Show scheleton").onChange((value) => {this.tree_instance.toggle_scheleton(value)});
-        this.gui.add(this.parameters, 'wind_audio').name("Wind toggle").onChange(() => {this.wind.toggle_wind()});
+        this.gui.add(this.parameters, 'wind_audio').name("Wind audio").onChange(() => {this.wind.toggle_wind()});
 
 
     }
